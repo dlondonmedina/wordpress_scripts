@@ -67,9 +67,8 @@ else
 fi
 echo "File backup completed."
 echo "Beginning database backup..."
-echo "You will be prompted for your database password..."
-u=dpm_admin
-mysqldump -u $u -p dpm_wordpress > $target/day/dump.sql
+
+mysqldump dpm_wordpress > $target/day/dump.sql
 echo "Database backup created."
 
 # Check if monthly backup exists and is 30 days old and remove as needed.
